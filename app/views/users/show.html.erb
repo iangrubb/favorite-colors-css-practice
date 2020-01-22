@@ -1,0 +1,29 @@
+<h1><%= @user.name %></h1>
+<h2><%= @user.position %></h2>
+<img src=<%= @user.image_url %>>
+
+<h2> Favorite Colors </h2>
+
+<%= button_to "New Color"%>
+
+<div>
+    <% @user.colors.each do |color| %>
+        <div><%=color.hex_code%></div>
+    <% end %>
+</div>
+
+<h2> Color Palettes </h2>
+
+<%= button_to "New Palette"%>
+
+<div>
+    <% @user.palettes.each do |palette| %>
+        <div>
+        <h3><%= palette.name %></h3>
+        <% palette.colors.each do |color|%>
+            <div><%=color.hex_code%></div>
+        <% end %>
+        </div>
+    <% end %>
+</div>
+
