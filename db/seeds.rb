@@ -41,7 +41,8 @@ users.each_with_index do |user_data, idx|
             color = potential_colors.sample
         else 
             hex_code = Faker::Color.unique.hex_color
-            color = Color.create(hex_code: hex_code)
+
+            color = Color.create(hex_code: hex_code, name: Color.hex_to_name(hex_code))
         end
 
         Favorite.create(user_id: user.id, color_id: color.id)

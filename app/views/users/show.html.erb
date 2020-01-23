@@ -2,26 +2,33 @@
 <h2><%= @user.position %></h2>
 <img src=<%= @user.image_url %>>
 
-<h2> Favorite Colors </h2>
+<div>
+    <%= link_to "New Favorite Color", new_user_favorite_path(@user) %>
+    <%= link_to "New Palette", new_user_palette_path(@user) %>
+</div>
 
-<%= button_to "New Color"%>
+<h2> Favorite Colors </h2>
 
 <div>
     <% @user.colors.each do |color| %>
-        <div><%=color.hex_code%></div>
+        <div>
+            <h4><%=color.name%></h4>
+            <p><%=color.hex_code%></p>
+        </div>
     <% end %>
 </div>
 
 <h2> Color Palettes </h2>
-
-<%= button_to "New Palette"%>
 
 <div>
     <% @user.palettes.each do |palette| %>
         <div>
         <h3><%= palette.name %></h3>
         <% palette.colors.each do |color|%>
-            <div><%=color.hex_code%></div>
+            <div>
+                <h4><%= color.name %></h4>
+                <p><%= color.hex_code %></p>
+            </div>
         <% end %>
         </div>
     <% end %>

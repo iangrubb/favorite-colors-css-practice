@@ -1,0 +1,14 @@
+<h1><%= @color.name %></h1>
+<h3><%= @color.hex_code %></h3>
+
+<h2>Users</h2>
+
+<% @color.users.each do |user| %>
+    <%= link_to user_path(user) do %>
+        <div>
+            <h2><%= user.name %></h2>
+            <h3><%= user.position %></h3>
+            <img src=<%= user.image_url %>>
+        </div>
+    <% end %>
+<% end %>

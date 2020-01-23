@@ -1,0 +1,12 @@
+<h1>All Colors</h1>
+
+<% @colors.each do |color| %>
+
+    <%= link_to color_path(color) do %>
+        <div>
+            <h2><%= color.name%></h2>
+            <h3><%= color.hex_code %></h3>
+        </div>
+    <% end %>
+
+<% end %>
