@@ -1,0 +1,19 @@
+
+<h2>New palette for <%= @user.name %>:</h2>
+
+<div><%= flash[:errors] ? flash[:errors][0] : nil %></div>
+
+
+<%= form_tag "/users/#{@user.id}/palettes" do %>
+    <%= label_tag "Name: "%>
+    <%= text_field_tag "name", "" %>
+    
+    <div>
+    <% @user.colors.each do |color| %>
+        <%= label_tag "#{color.name}:"%>
+        <%= check_box_tag "color_ids[]", color.id %>
+    <% end %>
+    </div>
+
+    <%= submit_tag "submit"%>
+<% end %>

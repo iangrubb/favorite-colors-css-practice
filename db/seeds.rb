@@ -42,7 +42,7 @@ users.each_with_index do |user_data, idx|
         else 
             hex_code = Faker::Color.unique.hex_color
 
-            color = Color.create(hex_code: hex_code, name: Color.hex_to_name(hex_code))
+            color = Color.create(hex_code: hex_code)
         end
 
         Favorite.create(user_id: user.id, color_id: color.id)
@@ -57,7 +57,7 @@ users.each_with_index do |user_data, idx|
 
     palette_count.times do
 
-        name = Faker::Food.fruits
+        name = Faker::GreekPhilosophers.unique.name
 
         palette = Palette.create(name: name, user_id: user.id)
 

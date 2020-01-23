@@ -1,0 +1,10 @@
+
+<h2>New color for <%= @user.name %>:</h2>
+
+<div><%= flash[:errors] ?  flash[:errors][0] : nil %></div>
+
+<%= form_tag "/users/#{@user.id}/favorites" do %>
+    <%= label_tag "Hex Code: "%>
+    <%= text_field_tag "hex_code", "#" %>
+    <%= submit_tag "submit"%>
+<% end %>

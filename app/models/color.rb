@@ -5,6 +5,12 @@ class Color < ApplicationRecord
     has_many :favorites
     has_many :users, through: :favorites
 
+    after_create :set_name
+
+    def set_name
+        self.update(name: Color.hex_to_name(hex_code))
+    end
+
     def rgb
         Color.hex_to_rgb(hex_code)
     end
