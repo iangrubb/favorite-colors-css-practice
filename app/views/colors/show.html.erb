@@ -1,14 +1,27 @@
-<h1><%= @color.name %></h1>
-<h3><%= @color.hex_code %></h3>
 
-<h2>Users</h2>
+<div id="color-show-container" style="background: <%= @color.hex_code %>">
 
-<% @color.users.each do |user| %>
-    <%= link_to user_path(user) do %>
-        <div>
-            <h2><%= user.name %></h2>
-            <h3><%= user.position %></h3>
-            <img src=<%= user.image_url %>>
+<h1 class="color-name"><%= @color.name %></h1>
+<h3 class="color-hex"><%= @color.hex_code %></h3>
+
+<h2 class="color-heading">Users who love this color:</h2>
+
+<div id="favoriting-users">
+    <% @color.users.each do |user| %>
+        <div class="user-index-card">
+            <%= link_to user_path(user) do %>
+                <h2><%= user.name %></h2>
+                <h3><%= user.position %></h3>
+                <div class="image-frame" style="background:<%= @color.hex_code %>" >
+                    <img src=<%= user.image_url %>>
+                </div>
+                <p><%= user.colors.count %> favorite colors</p>
+                <p><%= user.palettes.count %> saved palettes</p>
+            <% end %>
         </div>
     <% end %>
-<% end %>
+</div>
+
+
+
+<div>

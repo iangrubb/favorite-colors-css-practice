@@ -1,12 +1,14 @@
-<h1>All Colors</h1>
 
-<% @colors.each do |color| %>
+<div id="colors-container">
+    <% @colors.each do |color| %>
 
-    <%= link_to color_path(color) do %>
-        <div>
-            <h2><%= color.name%></h2>
-            <h3><%= color.hex_code %></h3>
+        <div class="color-swatch-container">
+            <%= link_to color_path(color) do %>
+                <div class="color-swatch" style="background:<%=color.hex_code%>;" ></div>
+                <h4><%=color.name%></h4>
+                <p><%=color.hex_code%></p>
+            <% end %>
         </div>
-    <% end %>
 
-<% end %>
+    <% end %>
+</div>
