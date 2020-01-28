@@ -1,9 +1,11 @@
 
-<h2>New color for <%= @user.name %>:</h2>
+<h2 class="section-header">New color for <%= @user.name %></h2>
 
-<div><%= flash[:errors] ?  flash[:errors][0] : nil %></div>
+<p id="error-display" style="display:<%= flash[:errors] ? 'default' : 'none' %>">
+    <%= flash[:errors] ?  flash[:errors][0] : nil %>
+</p>
 
-<%= form_tag "/users/#{@user.id}/favorites" do %>
+<%= form_tag "/users/#{@user.id}/favorites", id: "new-favorite-color" do %>
     <%= label_tag "Hex Code: "%>
     <%= text_field_tag "hex_code", "#" %>
     <%= submit_tag "submit"%>

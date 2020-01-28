@@ -417,3 +417,131 @@ nav a:hover {
 
 
 
+
+/* New Favorite and Palette Styling */
+
+
+#error-display {
+
+    margin: 0 0 32px 0;
+    padding: 8px;
+
+    border: 4px solid red;
+    border-radius: 4px;
+
+    color: red;
+    
+}
+
+form {
+
+    background: #131923;
+    padding: 20px;
+    border-radius: 8px;
+
+    max-width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 0 64px 0;
+
+}
+
+label {
+    color: #EBEEF4;
+    font-family: 'Dosis', sans-serif;
+    margin: 0 0 16px 0;
+    font-size: 20px;
+}
+
+input[type=text] {
+
+    padding: 12px 8px;
+    margin: 0 0 16px 0;
+
+    font-family: 'Open Sans', sans-serif;
+
+    max-width: 300px;
+
+}
+
+input[type=submit] {
+    width: 80px;
+}
+
+.color-selection {
+    background: #EBEEF4;
+
+    border-radius: 8px;
+    padding: 16px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: 0 0 16px 0;
+}
+
+.color-selection input[type="checkbox"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.color-selection input[type="checkbox"] + fieldset {
+    text-align: center;
+    width: 120px;
+    height: 80px;
+    margin: 12px;
+    padding: 4px;
+    
+    display: inline-block;
+    border-radius: 4px;
+
+    transition: all 0.1s ease;
+
+    border: 5px solid rgba(1, 1, 1, 0);
+
+    cursor: pointer;
+
+    
+    
+}
+
+
+.color-selection input[type="checkbox"] + fieldset:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 8px #131923;
+
+}
+
+.color-selection input[type="checkbox"]:checked + fieldset {
+    border: 5px solid #131923;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 8px #131923;
+
+}
+
+.color-selection input[type="checkbox"] + fieldset legend{
+
+    color:#131923;
+    background: #EBEEF4;
+    font-size: 16px;
+
+    border: 2px solid #131923;
+    border-radius: 4px;
+    
+    padding: 4px 5%;
+    width: 70%;
+
+
+}
+
+

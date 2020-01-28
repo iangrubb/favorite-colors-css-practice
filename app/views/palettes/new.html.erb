@@ -1,18 +1,25 @@
 
-<h2>New palette for <%= @user.name %>:</h2>
+<h2 class="section-header">New palette for <%= @user.name %></h2>
 
-<div><%= flash[:errors] ? flash[:errors][0] : nil %></div>
+<p id="error-display" style="display:<%= flash[:errors] ? 'default' : 'none' %>">
+    <%= flash[:errors] ?  flash[:errors][0] : nil %>
+</p>
 
 
 <%= form_tag "/users/#{@user.id}/palettes" do %>
     <%= label_tag "Name: "%>
     <%= text_field_tag "name", "" %>
-    
-    <div>
-    <% @user.colors.each do |color| %>
-        <%= label_tag "#{color.name}:"%>
-        <%= check_box_tag "color_ids[]", color.id %>
-    <% end %>
+    <%= label_tag "Colors: "%>
+
+    <div class="color-selection">
+        <% @user.colors.each do |color| %>
+            <label>
+                <%= check_box_tag "color_ids[]", color.id%>
+                <fieldset style="background:<%= color.hex_code %>">
+                    <legend><%= color.name %></legend>
+                </fieldset>
+            </label>
+        <% end %>
     </div>
 
     <%= submit_tag "submit"%>
