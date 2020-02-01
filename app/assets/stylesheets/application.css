@@ -510,11 +510,8 @@ input[type=submit] {
     border: 5px solid rgba(1, 1, 1, 0);
 
     cursor: pointer;
-
-    
     
 }
-
 
 .color-selection input[type="checkbox"] + fieldset:hover {
     transform: scale(1.1);
@@ -540,7 +537,6 @@ input[type=submit] {
     
     padding: 4px 5%;
     width: 70%;
-
 
 }
 
